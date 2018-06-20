@@ -3,7 +3,7 @@ class HanoiGame:
     _firstStack = Stack()
     _secondStack = Stack()
     _thridStack = Stack()
-   
+    _numberOfDisks = 0
     
     def __init__(self, numberOfDisks):
         if numberOfDisks == None:
@@ -11,6 +11,7 @@ class HanoiGame:
         if numberOfDisks < 2 or numberOfDisks > 10:
             raise ValueError("The number of disks has to be between 2 and 10")
         self._initialize_Game_Field(numberOfDisks)
+        self._numberOfDisks = numberOfDisks
 
     def _initialize_Game_Field(self, numberOfDisks):
          for i in range(3,0,-1):
@@ -43,6 +44,13 @@ class HanoiGame:
        if input is 3:
            return self._thridStack
        ValueError: "Invalid stack, has to be 1, 2 or 3"
+
+    def ReturnStackCopied(self, input):
+        copy = self._get_stack(input)
+        #TODO: RESIZE
+        copy = self.Resize(copy)
+        copy.sort()
         
         
+
             
