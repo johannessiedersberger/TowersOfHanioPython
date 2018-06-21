@@ -30,9 +30,10 @@ class HanoiGame:
         startStack = self._get_stack(start)
         endStack = self._get_stack(end)
 
-        if startStack.isEmpty == True:
+        if startStack.isEmpty is True:
             raise AssertionError("There is no Disk on the startStack")
-        if endStack.isEmpty == False and startStack.Peek() > endStack.Peek():
+       
+        if endStack.isEmpty is False and startStack.Peek() > endStack.Peek():
             raise AssertionError("The Disk of the startStack is bigger than the Disk from the endstack")
 
        
@@ -43,7 +44,7 @@ class HanoiGame:
            return self._secondStack
        if input is 3:
            return self._thridStack
-       ValueError: "Invalid stack, has to be 1, 2 or 3"
+       raise ValueError("Invalid stack, has to be 1, 2 or 3")
 
     def ReturnStackCopied(self, input):
         stack = self._get_stack(input)
@@ -52,6 +53,10 @@ class HanoiGame:
             c.push(0)
         c.sort()
         return c
+
+    def CheckIfGameWon(self):
+        return self.ReturnStackCopied(3).index(0) == 1
+
 
     
         
