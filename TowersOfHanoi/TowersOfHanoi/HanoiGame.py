@@ -32,8 +32,8 @@ class HanoiGame:
 
         if startStack.isEmpty is True:
             raise AssertionError("There is no Disk on the startStack")
-       
-        if endStack.isEmpty is False and startStack.Peek() > endStack.Peek():
+        
+        if(endStack.isEmpty()) and (startStack.peek() > endStack.peek()):
             raise AssertionError("The Disk of the startStack is bigger than the Disk from the endstack")
 
        

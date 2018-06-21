@@ -12,15 +12,16 @@ def main():
 
 def _game_procedur(Game, Drawer):
     while Game.CheckIfGameWon() is False:
-            #try:
+            try:
                 startStack = AskForStack("Start")
                 endStack = AskForStack("End")
                 clear = lambda: os.system('cls')
                 clear()
                 Game.turn(startStack, endStack)
                 Drawer.DrawStacks(Game)
-            #cept Exception as e:
-             #   print('ERROR: ' + str(e))
+            except Exception as e:
+                print('ERROR: ' + str(e))
+                Drawer.DrawStacks(Game)
     return
    
 
