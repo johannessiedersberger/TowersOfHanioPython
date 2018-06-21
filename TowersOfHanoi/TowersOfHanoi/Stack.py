@@ -1,6 +1,10 @@
 class Stack:
-     def __init__(self):
-         self.items = []
+
+     def __init__(self, arr=None):
+         if arr is None:
+             self.items = []
+         else:
+             self.items = arr
 
      def isEmpty(self):
          return self.items == []
@@ -16,6 +20,17 @@ class Stack:
 
      def size(self):
          return len(self.items)
+
+     def copy(self):
+         return Stack(self.items[:])
+
+     def sort(self):
+         return self.items.sort()
+
+     def index(self, pos):
+        return self.items[pos]
+
+         
 
   
 

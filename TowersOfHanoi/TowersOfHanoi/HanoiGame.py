@@ -46,10 +46,14 @@ class HanoiGame:
        ValueError: "Invalid stack, has to be 1, 2 or 3"
 
     def ReturnStackCopied(self, input):
-        copy = self._get_stack(input)
-        #TODO: RESIZE
-        copy = self.Resize(copy)
-        copy.sort()
+        stack = self._get_stack(input)
+        c = stack.copy()
+        while c.size() < self._numberOfDisks:
+            c.push(0)
+        c.sort()
+        return c
+
+    
         
         
 
