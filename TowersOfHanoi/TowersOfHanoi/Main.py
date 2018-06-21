@@ -29,12 +29,17 @@ def AskForNumberOfDisks():
     correctInput = False
     
     while correctInput is False:
-        i = int(input("Number of Disks (2-10): "))
-       
-        if(i > 2 and i <= 10):
-            return i
-        else:
+        try:
+            i = int(input("Number of Disks (2-10): "))
+            if(i > 2 and i <= 10):
+                return i
+            else:
+                 print("Wrong Input")
+        except ValueError:
             print("Wrong Input")
+        
+        
+           
 
        
 def AskForStack(stackString):
@@ -43,8 +48,8 @@ def AskForStack(stackString):
         print("Please select the " + stackString )
         print("1[a] 2[b] 3[c]")
         i = int(input("INPUT: "))
-    except e:
-        print('Error: ' + str(e))
+    except Exception as e:
+        print("Wrong Input")
     return i
 
 if __name__ == "__main__": main()
