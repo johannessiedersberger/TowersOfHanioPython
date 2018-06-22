@@ -4,12 +4,12 @@ import os
 
 def main():
     numberOfDisks = AskForNumberOfDisks()
-    Game = HanoiGame(3)
+    Game = HanoiGame(numberOfDisks)
     Drawer = HanoiDraw()
+    Drawer.DrawStacks(Game)
     _game_procedur(Game, Drawer)
     print("WON")
    
-
 def _game_procedur(Game, Drawer):
     while Game.CheckIfGameWon() is False:
             try:
@@ -24,7 +24,6 @@ def _game_procedur(Game, Drawer):
                 Drawer.DrawStacks(Game)
     return
    
-
 def AskForNumberOfDisks():
     correctInput = False
     
@@ -37,11 +36,7 @@ def AskForNumberOfDisks():
                  print("Wrong Input")
         except ValueError:
             print("Wrong Input")
-        
-        
-           
-
-       
+               
 def AskForStack(stackString):
     i = 0
     try:

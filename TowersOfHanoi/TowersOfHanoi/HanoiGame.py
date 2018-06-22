@@ -14,7 +14,7 @@ class HanoiGame:
         self._numberOfDisks = numberOfDisks
 
     def _initialize_Game_Field(self, numberOfDisks):
-         for i in range(3,0,-1):
+         for i in range(numberOfDisks,0,-1):
             self._firstStack.push(i)
         
     def turn(self, start, end):
@@ -35,8 +35,7 @@ class HanoiGame:
         
         if(endStack.isEmpty()) and (startStack.peek() > endStack.peek()):
             raise AssertionError("The Disk of the startStack is bigger than the Disk from the endstack")
-
-       
+   
     def _get_stack(self, input):
        if input is 1:
            return self._firstStack
