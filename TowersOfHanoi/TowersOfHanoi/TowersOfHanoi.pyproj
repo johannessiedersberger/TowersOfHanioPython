@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>55f2b883-4cc1-4041-8885-747599fb34b1</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Main.py</StartupFile>
+    <StartupFile>__main__.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,14 +21,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="HanoiDraw.py">
+    <Compile Include="draw.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HanoiGame.py" />
-    <Compile Include="Main.py">
+    <Compile Include="hanoi.py" />
+    <Compile Include="test.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Stack.py">
+    <Compile Include="__main__.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
